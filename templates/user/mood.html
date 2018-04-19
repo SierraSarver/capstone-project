@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block style %}
+<link href="{% static 'user/css/mood.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Mood Tracker
+{% endblock %}
+
+{% block content %}
+  <nav class="navbar navbar-inverse navbar-fix-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Mood</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'dashboard' %}">Back</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="check-in">
+    <span class="check-in-content">
+      How happy are you feeling today?
+      <div class="happiness-slider">
+        <input type="range" min="0" max="100" value="0" class="slider" id="mood-score">
+        <span id="value" style="margin-left: 10px;">0</span>
+      </div>
+      <button id="add-mood" style="display: block; margin: auto; font-size: 10px;">OK</button>
+      <a id="remind-me-later" href="#">Remind me later</a>
+    </span>
+  </div>
+
+  <div class="main">
+    <canvas id="canvas"></canvas>
+  </div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'user/js/mood.js' %}"></script>
+<script src="{% static 'user/vendor/chartjs/dist/Chart.js' %}"></script>
+<script src="{% static 'user/vendor/chartjs-plugin-zoom/chartjs-plugin-zoom.js' %}"></script>
+<script src="{% static 'user/vendor/moment/moment.js' %}"></script>
+<script>
+  // Mood Chart
+  var dates = ["Mar 19, 2:13 pm", "Mar 19, 3:13 pm", "Mar 19, 3:43 pm", "Mar 20, 5:01 am", "Mar 21, 9:01 pm"];
+  var scores = [80, 55, 67, 82, 96];
+
+  $("#add-mood").click(function() {
+    dates.push(moment().format("MMM DD, h:mm a"));
+    scores.push(document.getElementById("mood-score").value);
+  });
+
+  var gradient = canvas.getContext('2d').createLinearGradient(0, 0, 0, 500);
+  gradient.addColorStop(0, '#ffdeed');
+  gradient.addColorStop(0.3, '#ffc2f0');
+  gradient.addColorStop(0.7, '#f0c2ff');
+  gradient.addColorStop(1, '#d1c2ff');
+
+  var ctx = document.getElementById("canvas");
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: dates,
+        datasets: [{
+            label: 'Happiness value',
+            data: scores,
+            backgroundColor: gradient,
+            borderColor: '#d1c2ff',
+            borderWidth: 1
+        }]
+    },
+    options: {
+      title: {
+        display: true,
+        fontSize: 18,
+        text: 'A Journey to Happiness'
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      pan: {
+        enabled: true,
+        mode: 'x'
+      },
+      zoom: {
+        enabled: true,
+        mode: 'x'
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 100
+          }
+        }]
+      }
+    }
+  });
+</script>
+{% endblock %}

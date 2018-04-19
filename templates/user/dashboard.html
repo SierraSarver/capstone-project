@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block style %}
+<link href="{% static 'user/css/dashboard.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+  <nav class="navbar navbar-inverse navbar-fix-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Dashboard</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'user_logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'user_login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="dashboard">
+    <p>
+      <a href="{% url 'mood' %}"><button class="db-btn">Mood</button></a>
+      <a href="{% url 'meditation' %}"><button class="db-btn">Meditation</button></a>
+      <a href="{% url 'music' %}"><button class="db-btn">Music</button></a>
+{% endblock %}

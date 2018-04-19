@@ -1,0 +1,30 @@
+nav {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.dashboard {
+  width: 100%;
+  position: relative;
+  top: 20%;
+}
+
+.db-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width 600px;
+  height: 100px;
+  cursor: pointer;
+  display: block;
+  margin: 40px auto;
+  bottom: 1px;
+  padding: 10px 90px;
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+.db-btn:hover {
+  -webkit-transition: .5s all ease;
+  transition: .5s all ease;
+  background-color: rgba(255, 255, 255, .5);
+}

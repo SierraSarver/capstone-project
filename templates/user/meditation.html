@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block style %}
+<link href="{% static 'user/css/meditation.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Meditation
+{% endblock %}
+
+{% block content %}
+  <nav class="navbar navbar-inverse navbar-fix-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Meditation</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'dashboard' %}">Back</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="hi">
+    <div class="orb_1 orb">
+      <p class = "text" id = "demo"> Breathe In</p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'user/js/meditation.js' %}"></script>
+{% endblock %}

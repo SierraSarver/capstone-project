@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block style %}
+<link href="{% static 'user/css/landing-page.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Landing Page
+{% endblock %}
+
+{% block content %}
+  <div class="landing-page">
+    <h1 class="logo">Serenity</h1>
+    <button class="signup" href="">Sign Up</button>
+    <button class="login"><a class="button" href="{% url 'user_login' %}">Login</a></button>
+    <p>
+      <a class = "link" href="{% url 'user_login' %}">Support</a>
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p style="font-family: Cabin;"> Copyright &copy; Serenity 2018</p>
+    </div>
+  </footer>
+{% endblock %}

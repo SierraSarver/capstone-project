@@ -1,0 +1,62 @@
+<!-- Music from https://www.zapsplat.com -->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block style %}
+<link href="{% static 'user/css/music.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Music
+{% endblock %}
+
+{% block content %}
+  <nav class="navbar navbar-inverse navbar-fix-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Music</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'dashboard' %}">Back</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="audio">
+    <h1 class=title>Play Some Relaxing Sounds Below</h1>
+
+    <h2>Available Sounds:</h2>
+
+    <!-- PLAY BUTTONS -->
+    <button class="play" id="btn1">play</button>
+    <h3>Waterfall</h3>
+    <button class="play" id="btn2">play</button>
+    <h3>Ocean Waves</h3>
+    <button class="play" id="btn3">play</button>
+    <h3>Relaxation</h3>
+    <button class="play" id="btn4">play</button>
+    <h3>Motivational</h3>
+
+    <!-- SOUNDS -->
+    <audio id="sound1">
+      <source src="{% static 'user/mp3/zapsplat_nature_waterfall_small_light_flow_creek_rainforest_short_version_18108.mp3' %}" type="audio/ogg" />
+    </audio>
+
+    <audio id="sound2">
+      <source src="{% static 'user/mp3/zapsplat_nature_ocean_waves_gentle_small_lap_into_rock_pool_distant_surf_16525.mp3' %}" type="audio/ogg" />
+    </audio>
+
+    <audio id="sound3">
+      <source src="{% static 'user/mp3/music_zapsplat_among_the_stars.mp3' %}" type="audio/ogg" />
+    </audio>
+
+    <audio id="sound4">
+      <source src="{% static 'user/mp3/audio_hero_Lifes-A-Breeze_SIPML_D-0109.mp3' %}" type="audio/ogg" />
+    </audio>
+  </div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'user/js/music.js' %}"></script>
+{% endblock %}

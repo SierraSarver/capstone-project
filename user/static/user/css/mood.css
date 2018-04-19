@@ -1,0 +1,66 @@
+/* Mood styling */
+.check-in {
+  cursor: pointer;
+  position: relative;
+  top: 30%;
+  left: 40%;
+}
+
+.check-in a {
+  color: #999;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.check-in a:hover {
+  color: black;
+}
+
+.check-in-content {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  visibility: visible;
+  width: 300px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+}
+
+.check-in .hide {
+  visibility: hidden;
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+
+.main {
+  position: relative;
+  margin: auto;
+  top: 20%;
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

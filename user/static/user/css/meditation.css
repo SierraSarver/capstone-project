@@ -1,0 +1,43 @@
+/* Meditation Orb Styling */
+.text {
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  line-height: 500px;
+  color: white;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.hi {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background: rgba(17, 46, 212, 0.3);
+  margin: auto;
+  margin-top: 80px;
+  font-size: 50px
+}
+
+.orb {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background: red;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.orb_1 {
+  animation-name:orb_1;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-iteration-count:infinite;
+	animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+
+@keyframes orb_1 {
+  from { transform: scale(1); background: rgba(243, 52, 90, .4); }
+	   to { transform: scale(.33); background: rgba(102, 255, 153,.4); }
+}
