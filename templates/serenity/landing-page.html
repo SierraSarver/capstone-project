@@ -12,10 +12,10 @@ Landing Page
 {% block content %}
   <div class="landing-page">
     <h1 class="logo">Serenity</h1>
-    <button class="signup" href="">Sign Up</button>
+    <button class="signup"><a class="button" href="{% url 'user_signup' %}">Signup</button>
     <button class="login"><a class="button" href="{% url 'user_login' %}">Login</a></button>
     <p>
-      <a class = "link" href="{% url 'user_login' %}">Support</a>
+      <a class = "link" href="">Support</a>
     </p>
   </div>
 

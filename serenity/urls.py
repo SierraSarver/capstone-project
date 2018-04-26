@@ -21,19 +21,19 @@ from django.contrib.auth.views import LoginView, LogoutView
 from .views import landing_page, signup_view
 
 urlpatterns = [
-    # Admin Url
-    url(r'^admin/', admin.site.urls),
-    # Includes all url's from user subapp?
-    url(r'^user/', include('user.urls')),
-    # Url for landing page
-    url(r'^$', landing_page, name="landing_page"),
-    # Url for login template view
-    url(r'login$',
+    # Admin path
+    path("admin/", admin.site.urls),
+    # Includes all url's from user subapp path
+    path("user/", include('user.urls')),
+    # Path for landing page
+    path("", landing_page, name="landing_page"),
+    # Path for login
+    path("login/",
         LoginView.as_view(template_name="serenity/login-form.html"),
         name="user_login"),
-    # Url for logging out
-    url(r'logout$',
+    # Path for logout
+    path("logout/",
         LogoutView.as_view(),
         name="user_logout"),
-    path("signup/", signup_view, name = "signup_view")
+    path("signup/", signup_view, name="user_signup")
 ]
