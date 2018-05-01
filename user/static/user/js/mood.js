@@ -1,3 +1,5 @@
+// Mood Static JavaScript
+
 $(".main").hide();
 
 $("#remind-me-later").click(function() {

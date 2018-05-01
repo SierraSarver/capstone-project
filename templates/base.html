@@ -1,3 +1,6 @@
+<!-- Base Static Template -->
+<!-- Used for every template which then loads their own static block content -->
+
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Base Template File">
-    <meta name="author" content="Serenity">
+    <meta name="author" content="Team Serenity">
 
     <title>{% block title %}{% endblock %}</title>
 
@@ -27,6 +30,7 @@
     {% endblock %}
 
   </head>
+
   <body id="gradient">
     {% block content %}
     {% endblock %}

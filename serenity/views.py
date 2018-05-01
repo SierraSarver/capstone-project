@@ -1,30 +1,38 @@
+# Functions to handle the different views for a new or returning Serenity user.
+#   - Takes HTTP requests and returns some response
+#       - Generally calles a template and/or Model
+
+# https://docs.djangoproject.com/en/2.0/topics/forms/
+#   Reference for learning Django's custom forms
+
 from django.shortcuts import render, redirect
 from user.custom_forms import RegisterUserForm
-from user.custom_forms import SignUpForm
 
-# If user is logged in, return the dashboard view. Else, return the landing page.
-# Will just go to landing page when starting django server since not logged in.
+# Function to handle the different views between users who are
+# authenticated and those who are not.
 def landing_page(request):
+    # if user is logged in, return the dashboard view
     if request.user.is_authenticated:
         return redirect('dashboard')
+    # else, return the landing page since user is not authenticated
     else:
         return render(request, "serenity/landing-page.html")
+        # will render landing page when starting server since new user
 
-# Need a function here to render signup view form login button click
+# Function to instantiate the custom registration form into the signup view.
 def signup_view(request):
-        #detect get or post
-        if request.method == 'POST':
-            form = RegisterUserForm(request.POST)
-            (request.POST)
-            #check if form is valid
-            if form.is_valid():
-                user = form.save()
-                #log the user in after
-                #redirect to /home
-                return redirect('user_login')
-            else:
-                return render(request, 'serenity/signup-form.html', {'form1':form})
-        #if get, return a blank form
-        else:
-            form = RegisterUserForm()
-        return render(request, 'serenity/signup-form.html/', {'form1':form})
+    # if it is a post request, process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with the data from the request
+        form = RegisterUserForm(request.POST)
+        # check if the form is valid
+        if form.is_valid():
+            # save it
+            user = form.save()
+            # redirect the user to login
+            return redirect('user_login')
+    # else if it is a get request, return a blank form
+        # expect this on first time visit
+    else:
+        form = RegisterUserForm()
+    return render(request, 'serenity/signup-form.html/', {'form1':form})

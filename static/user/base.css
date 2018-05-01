@@ -1,4 +1,6 @@
-/* General layout Styling */
+/* Base Static Styling */
+/* Used for every template which then loads their own static block styles */
+
 body {
   font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;

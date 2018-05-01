@@ -1,3 +1,5 @@
+// Meditation Static JavaScript
+
 var time = setInterval(myfunction,4000);
 var time = 0
 

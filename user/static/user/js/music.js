@@ -1,5 +1,7 @@
-// Music JavaScript
+// Music Static JavaScript
 
+// Function to toggle between playing/pausing the audio static files
+// when clicking the different buttons.
 $('.play').click(function() {
   var $this = $(this);
   var id = $this.attr('id').replace(/btn/, '');

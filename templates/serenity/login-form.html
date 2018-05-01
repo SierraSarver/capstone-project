@@ -1,3 +1,5 @@
+<!-- Login Form Template -->
+
 {% extends "base.html" %}
 {% load staticfiles %}
 
@@ -7,14 +9,14 @@
 {% endblock %}
 
 {% block title %}
-Login
+Login Form
 {% endblock %}
 
 {% block content %}
   <div class="container">
-    <h1>Login</h1>
+    <h1 class="name2">Login</h1>
     <p>Please login to access your dashboard.</p>
-    <div style="width:30%">
+    <div style="width:25%">
     <form role="form" action="{% url 'user_login' %}" method="post">
       {% csrf_token %}
 

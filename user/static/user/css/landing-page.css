@@ -1,7 +1,13 @@
-/* Landing Page Styling */
+/* Landing Page Static Styling */
+
 .logo {
   font-size: 75px;
   margin-bottom: 50px;
+}
+
+.quote {
+  font-family:Brush Script MT;
+  font-size: 24px;
 }
 
 .link {
@@ -21,6 +27,7 @@
   padding: 10px 90px;
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .login {
@@ -33,4 +40,5 @@
   padding: 10px 98px;
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: lighter;
+  cursor: pointer;
 }

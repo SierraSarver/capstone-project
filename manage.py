@@ -1,3 +1,5 @@
+# Python script to run the Django local host server
+
 #!/usr/bin/env python
 import os
 import sys
