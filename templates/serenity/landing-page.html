@@ -14,10 +14,10 @@ Landing Page
 {% block content %}
   <div class="landing-page">
     <h1 class="logo">Serenity</h1>
-    <p class="quote">With the new day comes new strength and new thoughts.<br>
-                                                    -Eleanor Roosevelt</p>
-    <button class="signup"><a class="button" href="{% url 'user_signup' %}">Signup</button>
-    <button class="login"><a class="button" href="{% url 'user_login' %}">Login</a></button>
+    <p class="quote">With the new day comes new strength and new thoughts.</p>
+    <p class="quote"><span class="right">— Eleanor Roosevelt</span></p>
+    <a class="button" href="{% url 'user_signup' %}"><button class="signup">Signup</button></a>
+    <a class="button" href="{% url 'user_login' %}"><button class="login">Login</button></a>
     <p>
       <a class="link" href="">Support</a>
     </p>

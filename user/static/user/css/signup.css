@@ -1,5 +1,13 @@
 /* Signup Form Static Styling */
+.container {
+  margin-top: 200px !important;
+  text-align: center !important;
+}
 
-.button {
-  color: black;
+div {
+  margin: auto !important;
+}
+
+.form-group {
+  margin-bottom: 20px !important;
 }

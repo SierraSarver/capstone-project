@@ -1,1 +1,18 @@
 /* Login Form Static Styling */
+.container {
+  margin-top: 300px !important;
+  text-align: center !important;
+}
+
+div {
+  margin: auto !important;
+}
+
+label {
+  margin-right: 7px !important;
+  margin-bottom: 25px !important;
+}
+
+input {
+  color: grey !important;
+}
